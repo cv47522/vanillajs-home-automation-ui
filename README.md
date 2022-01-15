@@ -4,9 +4,9 @@ An application of home automation simulation UI built with plain JavaScripts.
 
 ## Demo
 
-![demo.gif](./images/demo.gif)
+![demo.gif](./img/demo.gif)
 
-![ScreenShot.png](./images/ScreenShot.png)
+![ScreenShot.png](./img/ScreenShot.png)
 
 ## Tools
 
