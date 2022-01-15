@@ -1,6 +1,6 @@
 'use strict';
 
-class Color {
+export class Color {
   constructor(r, g, b) {
     this.set(r, g, b);
   }
@@ -150,7 +150,7 @@ class Color {
   }
 }
 
-class Solver {
+export class Solver {
   constructor(target, baseColor) {
     this.target = target;
     this.targetHSL = target.hsl();
@@ -277,7 +277,7 @@ class Solver {
   }
 }
 
-function hexToRgb(hex) {
+export function hexToRgb(hex) {
   // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
   const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
   hex = hex.replace(shorthandRegex, (m, r, g, b) => {
@@ -294,47 +294,3 @@ function hexToRgb(hex) {
     : null;
 }
 
-const hexPicker = document.querySelector('hex-color-picker');
-const hexInput = document.querySelector('hex-input');
-const lightMask = document.getElementById("light-mask");
-
-const changeSvgColor = (hexInput) => {
-  const rgb = hexToRgb(hexInput);
-    if (rgb.length !== 3) {
-      alert('Invalid format!');
-      return;
-    }
-
-    const color = new Color(rgb[0], rgb[1], rgb[2]);
-    const solver = new Solver(color);
-    const result = solver.solve();
-
-    // let lossMsg;
-    // if (result.loss < 1) {
-    //   lossMsg = 'This is a perfect result.';
-    // } else if (result.loss < 5) {
-    //   lossMsg = 'The is close enough.';
-    // } else if (result.loss < 15) {
-    //   lossMsg = 'The color is somewhat off. Consider running it again.';
-    // } else {
-    //   lossMsg = 'The color is extremely off. Run it again!';
-    // }
-
-    // $('.realPixel').css('background-color', color.toString());
-    // $('.filterPixel').attr('style', result.filter);
-    lightMask.style.filter = result.filter;
-    console.log(result.filter);
-    // $('.filterDetail').text(result.filter);
-    // $('.lossDetail').html(`Loss: ${result.loss.toFixed(1)}. <b>${lossMsg}</b>`);
-};
-
-hexPicker.addEventListener('color-changed', (event) => {
-  hexInput.color = event.detail.value;
-  changeSvgColor(hexPicker.color);
-  console.log(hexPicker.color);
-});
-
-hexInput.addEventListener('color-changed', (event) => {
-  hexPicker.color = event.detail.value;
-  changeSvgColor(hexPicker.color);
-});
