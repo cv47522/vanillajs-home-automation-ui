@@ -13,12 +13,20 @@
 }
 
 #light-mask {
-    z-index: 1;
-    width: 100px;
+    z-index: -998;
     fill: green;
     stroke: blue;
     stroke-width: 2;
-    filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%);
+    /* filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%); */
+}
+
+#color-picker {
+    display: none;
+    /* display: block; */
+}
+
+.form-check-input:checked{
+    background-color: rgb(255, 196, 0);
 }
 
 hex-input::part(input) {
@@ -40,4 +48,13 @@ hex-input::part(input) {
 hex-input::part(input):focus {
     border-color: #4298ef;
     z-index: 999;
+}
+
+#flexSwitchCheckDefault {
+    height: 2.5rem;
+    width: 5rem;
+}
+
+.m-10 {
+    margin: 100px;
 }

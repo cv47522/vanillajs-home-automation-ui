@@ -2,7 +2,10 @@ import { Color, Solver, hexToRgb } from './components/svgLightColorPicker.js';
 
 const hexPicker = document.querySelector('hex-color-picker');
 const hexInput = document.querySelector('hex-input');
-const lightMask = document.getElementById("light-mask");
+const colorPicker = document.getElementById('color-picker');
+const lightMask = document.getElementById('light-mask');
+const switchLight = document.getElementById('switch-light');
+const switchLightLabel = document.getElementById("switch-light-label");
 
 const changeSvgLightColor = (hexInput) => {
   const rgb = hexToRgb(hexInput);
@@ -20,7 +23,23 @@ const changeSvgLightColor = (hexInput) => {
 };
 
 // default light color
-changeSvgLightColor(hexPicker.color);
+changeSvgLightColor('#000000');
+
+/* Control Light */
+let lightOn = false;
+switchLight.addEventListener('change', (event) => {
+  lightOn = !lightOn;
+
+  if(lightOn) {
+    colorPicker.style.display = 'block';
+    switchLightLabel.innerText = 'ON';
+    hexPicker.setAttribute('color', '#FFFFFF');
+  } else {
+    colorPicker.style.display = 'none';
+    switchLightLabel.innerText = 'OFF';
+    hexPicker.setAttribute('color', '#000000');
+  }
+});
 
 hexPicker.addEventListener('color-changed', (event) => {
   hexInput.color = event.detail.value;

@@ -14,27 +14,33 @@
 <body>
     <div class="container">
         <div id="room" class="row">
-            <img id="room-background" class="overlay" src="./images/room-dark.jpg" />
-            <img id="light-mask" class="overlay" src="./images/lightbulb.svg" width="100" />
+            <img id="room-background" class="overlay" src="./images/room.jpg" />
+            <img id="light-mask" class="overlay" src="./images/light-mask.svg" />
+        </div>
+        <div class="row m-10">
+
         </div>
         <div class="row">
             <div class="row">
                 <h1>Home Automation UI Control Panel</h1>
             </div>
             <div class="row">
-                <div class="col-6">
-                    <user-card name="John Wang" avatar="./images/man.png">
-                        <div slot="email">john@abc.com</div>
+                <div class="col-3">
+                    <user-card name="Wendy Hsieh" avatar="./images/woman.png">
+                        <div slot="email">xxx@abc.com</div>
                         <div slot="phone">+358-123456789</div>
                     </user-card>
-                    <!-- <user-card name="Alice Pan" avatar="./images/woman.png">
-                        <div slot="email">alice@abc.com</div>
-                        <div slot="phone">+358-123456789</div>
-                    </user-card> -->
                 </div>
-                <div class="col-4">
-                    <hex-color-picker color="#1e88e5"></hex-color-picker>
-                    <hex-input color="#1e88e5"></hex-input>
+                <div class="col-4 p-2 bg-secondary">
+                    <h3>Light</h3>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="switch-light">
+                        <h5 class="form-check-label" id="switch-light-label">OFF</h5>
+                    </div>
+                    <div id="color-picker">
+                        <hex-color-picker color="#000"></hex-color-picker>
+                        <hex-input color="#000"></hex-input>
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,6 +53,6 @@
     <script type="module" src="https://cdn.skypack.dev/vanilla-colorful/hex-input.js"></script>
     <!-- Custom Components -->
     <script src="./js/components/userCard.js"></script>
-    <script src="./js/components/svgColorPicker.js"></script>
+    <script type="module" src="./js/app.js"></script>
 </body>
 </html>
