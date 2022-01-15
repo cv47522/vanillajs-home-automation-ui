@@ -1,14 +1,18 @@
-#room {
+body {
+    background-color: grey;
+}
+
+.img-overlay {
     position: relative;
 }
 
-.overlay {
+.overlay-source {
     position: absolute;
     left: 0px;
     top: 0px;
 }
 
-#room-background {
+#room {
     z-index: -999;
 }
 
@@ -26,14 +30,19 @@
 }
 
 .form-check-input:checked{
-    background-color: rgb(255, 196, 0);
+    background-color: #ffc107;
+}
+.form-switch .form-check-input {
+    width: 4em;
+    height: 2em;
+    margin-right: 1em;
 }
 
 hex-input::part(input) {
     display: block;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     width: 90px;
-    margin: 20px 55px 0;
+    /* margin: 20px 55px 0; */
     padding: 6px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -56,5 +65,5 @@ hex-input::part(input):focus {
 }
 
 .m-10 {
-    margin: 100px;
+    margin: 10rem;
 }
