@@ -12,34 +12,41 @@
     <title>Home Automation UI</title>
 </head>
 <body>
-    <div class="container">
-        <div id="room" class="row">
-            <img id="room-background" class="overlay" src="./images/room.jpg" />
-            <img id="light-mask" class="overlay" src="./images/light-mask.svg" />
+    <div class="container p-3">
+        <div class="row img-overlay">
+            <img id="room" src="./images/room-closed.jpg" />
+            <img id="light-mask" class="overlay-source" src="./images/light-mask.svg" />
         </div>
-        <div class="row m-10">
-
-        </div>
-        <div class="row">
-            <div class="row">
-                <h1>Home Automation UI Control Panel</h1>
-            </div>
-            <div class="row">
+        <div class="row p-3">
+            <div class="row p-3">
                 <div class="col-3">
                     <user-card name="Wendy Hsieh" avatar="./images/woman.png">
                         <div slot="email">xxx@abc.com</div>
                         <div slot="phone">+358-123456789</div>
                     </user-card>
                 </div>
-                <div class="col-4 p-2 bg-secondary">
-                    <h3>Light</h3>
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="switch-light">
-                        <h5 class="form-check-label" id="switch-light-label">OFF</h5>
-                    </div>
-                    <div id="color-picker">
-                        <hex-color-picker color="#000"></hex-color-picker>
-                        <hex-input color="#000"></hex-input>
+                <div class="col-1"></div>
+                <div class="col-7 text-white pl-3">
+                    <h3 class="mb-3">Home Automation UI Control Panel</h3>
+                    <div class="row">
+                        <div class="col-6">
+                            <h4>Light</h4>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="switch-light">
+                                <h5 class="form-check-label pt-2 mb-3" id="switch-light-label">OFF</h5>
+                                <hex-input color="#000"></hex-input>
+                            </div>
+                            <div id="color-picker" class="mt-2">
+                                <hex-color-picker color="#000"></hex-color-picker>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <h4>Curtain</h4>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="switch-curtain">
+                                <h5 class="form-check-label pt-2" id="switch-curtain-label">OFF</h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

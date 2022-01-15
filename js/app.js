@@ -6,6 +6,9 @@ const colorPicker = document.getElementById('color-picker');
 const lightMask = document.getElementById('light-mask');
 const switchLight = document.getElementById('switch-light');
 const switchLightLabel = document.getElementById("switch-light-label");
+const switchCurtain = document.getElementById('switch-curtain');
+const switchCurtainLabel = document.getElementById("switch-curtain-label");
+const room = document.getElementById('room');
 
 const changeSvgLightColor = (hexInput) => {
   const rgb = hexToRgb(hexInput);
@@ -50,4 +53,18 @@ hexPicker.addEventListener('color-changed', (event) => {
 hexInput.addEventListener('color-changed', (event) => {
   hexPicker.color = event.detail.value;
   changeSvgLightColor(hexPicker.color);
+});
+
+/* Control Curtain */
+let curtainClose = false;
+switchCurtain.addEventListener('change', (event) => {
+  curtainClose = !curtainClose;
+
+  if(curtainClose) {
+    switchCurtainLabel.innerText = 'Open';
+    room.src = '../images/room-open.jpg';
+  } else {
+    switchCurtainLabel.innerText = 'Closed';
+    room.src = '../images/room-closed.jpg';
+  }
 });
