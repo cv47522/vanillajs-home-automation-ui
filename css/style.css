@@ -1,0 +1,43 @@
+#room {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#room-background {
+    z-index: -999;
+}
+
+#light-mask {
+    z-index: 1;
+    width: 100px;
+    fill: green;
+    stroke: blue;
+    stroke-width: 2;
+    filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%);
+}
+
+hex-input::part(input) {
+    display: block;
+    box-sizing: border-box;
+    width: 90px;
+    margin: 20px 55px 0;
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #eee;
+    outline: none;
+    font: inherit;
+    text-transform: uppercase;
+    text-align: center;
+    z-index: 999;
+}
+
+hex-input::part(input):focus {
+    border-color: #4298ef;
+    z-index: 999;
+}
