@@ -26,26 +26,26 @@
                     </user-card>
                 </div>
                 <div class="col-1"></div>
-                <div class="col-7 text-white pl-3">
+                <div class="col-7 text-white">
                     <h3 class="mb-3">Home Automation UI Control Panel</h3>
-                    <div class="row">
+                    <div class="row mt-4">
                         <div class="col-6">
+                            <!-- Light Switch -->
                             <h4>Light</h4>
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" role="switch" id="switch-light">
                                 <h5 class="form-check-label pt-2 mb-3" id="switch-light-label">OFF</h5>
-                                <hex-input color="#000"></hex-input>
                             </div>
-                            <div id="color-picker" class="mt-2">
-                                <hex-color-picker color="#000"></hex-color-picker>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <h4>Curtain</h4>
+                            <!-- Curtain Switch -->
+                            <h4 class="mt-5">Curtain</h4>
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" role="switch" id="switch-curtain">
-                                <h5 class="form-check-label pt-2" id="switch-curtain-label">OFF</h5>
+                                <h5 class="form-check-label pt-2" id="switch-curtain-label">Closed</h5>
                             </div>
+                        </div>
+                        <div id="color-picker" class="col-6">
+                            <hex-color-picker color="#000"></hex-color-picker>
+                            <hex-input color="#000"></hex-input>
                         </div>
                     </div>
                 </div>
